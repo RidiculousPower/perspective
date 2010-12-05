@@ -1,36 +1,36 @@
 [submodule "accounts"]
 	path = accounts
-	url = rp@ridiculouspower.com:magnets/accounts
+	url = rp@ridiculouspower.com:rmagnets/accounts
 [submodule "builder"]
 	path = builder
-	url = rp@ridiculouspower.com:magnets/builder
+	url = rp@ridiculouspower.com:rmagnets/builder
 [submodule "dom"]
 	path = dom
-	url = rp@ridiculouspower.com:magnets/dom
+	url = rp@ridiculouspower.com:rmagnets/dom
 [submodule "preferences"]
 	path = preferences
-	url = rp@ridiculouspower.com:magnets/preferences
+	url = rp@ridiculouspower.com:rmagnets/preferences
 [submodule "router"]
 	path = router
-	url = rp@ridiculouspower.com:magnets/router
+	url = rp@ridiculouspower.com:rmagnets/router
 [submodule "session"]
 	path = session
-	url = rp@ridiculouspower.com:magnets/session
+	url = rp@ridiculouspower.com:rmagnets/session
 [submodule "ajax"]
 	path = ajax
-	url = rp@ridiculouspower.com:magnets/ajax
+	url = rp@ridiculouspower.com:rmagnets/ajax
 [submodule "central"]
 	path = central
-	url = rp@ridiculouspower.com:magnets/central
+	url = rp@ridiculouspower.com:rmagnets/central
 [submodule "layout"]
 	path = layout
-	url = rp@ridiculouspower.com:magnets/layout
+	url = rp@ridiculouspower.com:rmagnets/layout
 [submodule "rack"]
 	path = rack
-	url = rp@ridiculouspower.com:magnets/rack
+	url = rp@ridiculouspower.com:rmagnets/rack
 [submodule "rss"]
 	path = rss
-	url = rp@ridiculouspower.com:magnets/rss
+	url = rp@ridiculouspower.com:rmagnets/rss
 [submodule "workflow"]
 	path = workflow
-	url = rp@ridiculouspower.com:magnets/workflow
+	url = rp@ridiculouspower.com:rmagnets/workflow
