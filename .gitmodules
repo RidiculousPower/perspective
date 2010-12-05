@@ -1,0 +1,36 @@
+[submodule "accounts"]
+	path = accounts
+	url = rp@ridiculouspower.com:magnets/accounts
+[submodule "builder"]
+	path = builder
+	url = rp@ridiculouspower.com:magnets/builder
+[submodule "dom"]
+	path = dom
+	url = rp@ridiculouspower.com:magnets/dom
+[submodule "preferences"]
+	path = preferences
+	url = rp@ridiculouspower.com:magnets/preferences
+[submodule "router"]
+	path = router
+	url = rp@ridiculouspower.com:magnets/router
+[submodule "session"]
+	path = session
+	url = rp@ridiculouspower.com:magnets/session
+[submodule "ajax"]
+	path = ajax
+	url = rp@ridiculouspower.com:magnets/ajax
+[submodule "central"]
+	path = central
+	url = rp@ridiculouspower.com:magnets/central
+[submodule "layout"]
+	path = layout
+	url = rp@ridiculouspower.com:magnets/layout
+[submodule "rack"]
+	path = rack
+	url = rp@ridiculouspower.com:magnets/rack
+[submodule "rss"]
+	path = rss
+	url = rp@ridiculouspower.com:magnets/rss
+[submodule "workflow"]
+	path = workflow
+	url = rp@ridiculouspower.com:magnets/workflow
