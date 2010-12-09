@@ -34,3 +34,6 @@
 [submodule "workflow"]
 	path = workflow
 	url = rp@ridiculouspower.com:rmagnets/workflow
+[submodule "logging"]
+	path = logging
+	url = rp@ridiculouspower.com:rmagnets/logging
