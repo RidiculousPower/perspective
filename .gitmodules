@@ -37,3 +37,6 @@
 [submodule "logging"]
 	path = logging
 	url = rp@ridiculouspower.com:rmagnets/logging
+[submodule "pageflow"]
+	path = pageflow
+	url = rp@ridiculouspower.com:rmagnets/pageflow
