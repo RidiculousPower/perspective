@@ -40,3 +40,6 @@
 [submodule "pageflow"]
 	path = pageflow
 	url = rp@ridiculouspower.com:rmagnets/pageflow
+[submodule "modules"]
+	path = modules
+	url = rp@ridiculouspower.com:rmagnets/modules
