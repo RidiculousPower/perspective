@@ -4,9 +4,9 @@
 [submodule "builder"]
 	path = builder
 	url = rp@ridiculouspower.com:rmagnets/builder
-[submodule "dom"]
-	path = dom
-	url = rp@ridiculouspower.com:rmagnets/dom
+[submodule "view-model"]
+	path = view-model
+	url = rp@ridiculouspower.com:rmagnets/view-model
 [submodule "preferences"]
 	path = preferences
 	url = rp@ridiculouspower.com:rmagnets/preferences
