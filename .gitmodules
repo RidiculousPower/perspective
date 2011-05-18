@@ -43,3 +43,9 @@
 [submodule "modules"]
 	path = modules
 	url = rp@ridiculouspower.com:rmagnets/modules
+[submodule "view"]
+	path = view
+	url = rp@ridiculouspower.com:rmagnets/view
+[submodule "xhtml"]
+	path = xhtml
+	url = rp@ridiculouspower.com:rmagnets/xhtml
