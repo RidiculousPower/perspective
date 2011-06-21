@@ -1,5 +1,5 @@
 
-module Rmagnets
+class Rmagnets
   class Session
   end
 end

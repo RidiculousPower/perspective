@@ -49,3 +49,9 @@
 [submodule "xhtml"]
 	path = xhtml
 	url = rp@ridiculouspower.com:rmagnets/xhtml
+[submodule "bindings"]
+	path = bindings
+	url = rp@ridiculouspower.com:rmagnets/bindings
+[submodule "view-path"]
+	path = view-path
+	url = rp@ridiculouspower.com:rmagnets/view-path
