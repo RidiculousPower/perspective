@@ -1,6 +1,6 @@
 require_relative '../../lib/rmagnets-session.rb'
 
-describe Rmagnets::Session do
+describe ::Rmagnets::Session do
 
   ##################
   #  session_port  #

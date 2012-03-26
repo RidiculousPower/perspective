@@ -3,12 +3,9 @@
 #-----------------------------------  Rmagnets Application Controller  -------------------------------------#
 #-----------------------------------------------------------------------------------------------------------#
 
-class Rmagnets::ApplicationController
+module Rmagnets::ApplicationController
 
 	attr_accessor		:request
-
-	# singleton - don't allow instances to be created
-	class << self ; undef_method( :new ) ; end
 
   ###############
   #  self.call  #
@@ -18,9 +15,9 @@ class Rmagnets::ApplicationController
 
 		self.request = Rack::Request.new( environment )
     
-	  return Rack::Response.new(	primary_view_model.to_xhtml( request ), 
+	  return Rack::Response.new(	primary_view_model.to_html( request ), 
 																status, 
-																'Content-Type' => 'text/xhtml' ).finish
+																'Content-Type' => 'text/html' ).finish
     
   end
 
@@ -36,8 +33,8 @@ class Rmagnets::ApplicationController
 		return self
 		
 	end
-	alias_method :set_primary_view_model, :primary_view_model=
-
+	class << self ; alias_method :set_primary_view_model, :primary_view_model= ; end
+  
   #############################
   #  self.primary_view_model  #
   #############################

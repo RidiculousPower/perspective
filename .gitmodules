@@ -55,3 +55,9 @@
 [submodule "view-path"]
 	path = view-path
 	url = rp@ridiculouspower.com:rmagnets/view-path
+[submodule "claimed-true"]
+	path = claimed-true
+	url = ./claimed-true/
+[submodule "view-html"]
+	path = view-html
+	url = ./view-html/
