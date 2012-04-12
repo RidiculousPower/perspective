@@ -1,10 +1,17 @@
 
-module Rmagnets
-  class Session
-  end
+require_relative '../session/lib/magnets-session.rb'
+
+module ::Magnets
 end
 
-require_relative 'rmagnets/Rmagnets/ApplicationController.rb'
-require_relative 'rmagnets/Rmagnets/Configuration.rb'
+basepath = 'magnets/Magnets'
 
-require_relative 'rmagnets/Rmagnets.rb'
+files = [
+  'Configuration'
+]
+
+files.each do |this_file|
+  require_relative( File.join( basepath, this_file ) + '.rb' )
+end
+
+require_relative( basepath + '.rb' )

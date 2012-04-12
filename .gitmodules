@@ -12,7 +12,7 @@
 	url = rp@ridiculouspower.com:rmagnets/preferences
 [submodule "router"]
 	path = router
-	url = rp@ridiculouspower.com:rmagnets/router
+	url = ./router/
 [submodule "session"]
 	path = session
 	url = rp@ridiculouspower.com:rmagnets/session

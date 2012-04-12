@@ -1,17 +1,13 @@
 
-#-----------------------------------------------------------------------------------------------------------#
-#--------------------------------------  Rmagnets Configuration  -------------------------------------------#
-#-----------------------------------------------------------------------------------------------------------#
+module ::Magnets::Configuration
 
-module Rmagnets::Configuration
-	
 	###############################
 	#  self.session_storage_port  #
 	###############################
 	
 	def self.session_storage_port
 	  
-	  return @session_storage_port || Persistence.current_port
+	  return @session_storage_port || ::Persistence.current_port
 	  
   end
 	
