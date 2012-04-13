@@ -1,5 +1,12 @@
 
+require_relative '../configuration/lib/magnets-configuration.rb'
+
+require_relative '../request/lib/magnets-request.rb'
 require_relative '../session/lib/magnets-session.rb'
+
+require_relative '../view-model/lib/magnets-view-model.rb'
+
+require_relative '../html/lib/magnets-html.rb'
 
 module ::Magnets
 end
@@ -7,7 +14,7 @@ end
 basepath = 'magnets/Magnets'
 
 files = [
-  'Configuration'
+  'Rack'
 ]
 
 files.each do |this_file|

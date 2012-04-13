@@ -1,5 +1,5 @@
 
-module ::Magnets::Request
+class ::Magnets::Request
   
   include ::Magnets::Request::Interface
   

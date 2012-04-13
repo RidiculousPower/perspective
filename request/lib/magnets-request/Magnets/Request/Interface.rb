@@ -11,7 +11,7 @@ module ::Magnets::Request::Interface
     
     @rack_request = rack_request
     
-    @request_path = ::Magnets::Path::RequestPath.new( request_path.path_info )
+    @request_path = ::Magnets::Path::RequestPath.new( rack_request.path_info )
     
   end
 
@@ -175,7 +175,7 @@ module ::Magnets::Request::Interface
   	#=================#
     #  delete_method  #
   	#=================#
-    
+
     alias_method :delete_method, :delete
 
   	#==========#
