@@ -14,45 +14,46 @@ module ::Magnets::Request::Interface
     @request_path = ::Magnets::Path::RequestPath.new( rack_request.path_info )
     
   end
+  
+  ####################
+  #  raw_parameters  #
+  ####################
+  
+  def raw_parameters
+
+		return @rack_request.params
+		
+  end
+	
+	################
+	#  parameters  #
+  ################
+
+  alias_method :parameters, :raw_parameters
 
 	##################
 	#  rack_request  #
-  #  request_path  #
   ##################
 
-  attr_reader :rack_request, :request_path
+  attr_reader :rack_request
   
-	##########
-  #  path  #
-  ##########
+	##################
+  #  request_path  #
+  #  path          #
+  ##################
   
+  attr_reader  :request_path
   alias_method :path, :request_path
   
-	################
+  ################
   #  uri_schema  #
   ################
 
   # http, https, etc.
   # 
-  attr_configuration_sorted_unique_array :uri_schema do
+  def uri_schema
 		
-		#=================#
-    #  pre_set_hooks  #
-		#=================#
-  	
-		def pre_set_hooks( index, uri_schema, is_insert )
-		  
-		  uri_schema = uri_schema.to_s
-		  
-		  # strip ://
-		  schema_end_delimiter_range = -3..-1
-		  if uri_schema.slice( schema_end_delimiter_range ) == '://'
-		    uri_schema.slice!( schema_end_delimiter_range )
-	    end
-		  
-		  return uri_schema.to_sym
-		  
-		end
+		return @rack_request.uri_schema
 		
   end
 
@@ -62,237 +63,102 @@ module ::Magnets::Request::Interface
   
   # GET, PUT, POST, DELETE
   #
-  attr_configuration_sorted_unique_array :request_method do
+  def request_method
 		
-		#=================#
-    #  pre_set_hooks  #
-		#=================#
-  	
-		def pre_set_hooks( index, request_method, is_insert )
-		  
-		  case request_method
-		    
-  	    when :GET, :PUT, :POST, :DELETE
-	      
-  	      # nothing to do
-	      
-        else
-		    
-  		    request_method = request_method.to_s.upcase.to_sym
-		    
-  		    case request_method
-		      
-    	    when :GET, :PUT, :POST, :DELETE
-		      
-    	      # nothing to do
-
-  	      else
-		      
-  		      raise ::ArgumentError, 
-  		            'Expected :GET, :PUT, :POST, or :DELETE, but received :' + 
-  		            request_method.to_s + '.'
-		      
-  	      end
-		    
-	    end
-		  
-		  return request_method
-		  
-	  end
+		return @rack_request.request_method
 		
-		#=======#
-    #  get  #
-    #=======#
+  end
 
-    def get
+	##########
+  #  get?  #
+  ##########
+  
+  def get?
 
-  		push( :GET )
+		return @rack_request.get?
 
-  		return self
+  end
 
-    end
+	##########
+  #  put?  #
+  ##########
+  
+  def put?
 
-  	#=============#
-    #  minus_get  #
-    #=============#
+		return @rack_request.put?
 
-    def minus_get
-      
-      delete_method( :GET )
+  end
 
-  		return self
-  		
-    end
+	###########
+  #  post?  #
+  ###########
 
-  	#=======#
-    #  put  #
-    #=======#
-
-    def put
-
-  		push( :PUT )
-
-  		return self
-
-    end
-
-  	#=============#
-    #  minus_put  #
-    #=============#
-
-    def minus_put
-      
-      delete_method( :PUT )
-
-  		return self
-  		
-    end
-
-  	#========#
-    #  post  #
-    #========#
-
-    def post
-
-  		push( :POST )
-
-  		return self
-
-    end
-
-  	#==============#
-    #  minus_post  #
-    #==============#
-
-    def minus_post
-      
-      delete_method( :POST )
-
-  		return self
-  		
-    end
-
-  	#=================#
-    #  delete_method  #
-  	#=================#
-
-    alias_method :delete_method, :delete
-
-  	#==========#
-    #  delete  #
-    #==========#
+  def post?
     
-    def delete
+		return @rack_request.post?
 
-  		push( :DELETE )
+  end
 
-  		return self
+	#############
+  #  delete?  #
+  #############
+  
+  def delete?
 
-    end		
-		
-		#================#
-    #  minus_delete  #
-    #================#
-  	
-  	def minus_delete
-      
-      delete_method( :DELETE )
+		return @rack_request.delete?
 
-  		return self
-  		
-    end
-    
   end
 
 	##########
   #  host  #
   ##########
 
-  def host( *hosts )
+  def host
 		
-		hosts.push( *hosts )
-		
-		return self
+		return @rack_request.host
 		
   end
 	alias_method :hostname, :host
-
-	###########
-  #  hosts  #
-  ###########
-
-  attr_configuration_sorted_unique_array :hosts
 
 	########
   #  ip  #
   ########
 
-  def ip( *ips )
+  def ip
 		
-		ips.push( *ips )
-		
-		return self
+		return @rack_request.ip
 		
   end
-
-	#########
-  #  ips  #
-  #########
-
-  attr_configuration_sorted_unique_array :ips
 	
 	##########
   #  port  #
   ##########
 
-  def port( *ports )
+  def port
 		
-		ports.push( *ports )
-		
-		return self
+		return @rack_request.port
 		
   end
-
-	###########
-  #  ports  #
-  ###########
-
-  attr_configuration_sorted_unique_array :ports
 
 	#############
   #  referer  #
   #############
 
-  def referer( *referers )
+  def referer
 		
-		referers.push( *referers )
+		return @rack_request.referer
 
-		return self
-		
   end
+	alias_method :referrer, :referer
 
-	##############
-  #  referers  #
-  ##############
-
-  attr_configuration_sorted_unique_array :referers
-	
 	################
   #  user_agent  #
   ################
 
-  def user_agent( *user_agents )
+  def user_agent
 		
-		user_agents.push( *user_agents )
-		
-		return self
+		return @rack_request.user_agent
 		
   end
-  
-	#################
-  #  user_agents  #
-  #################
-
-  attr_configuration_sorted_unique_array :user_agents
-  
+  	
 end

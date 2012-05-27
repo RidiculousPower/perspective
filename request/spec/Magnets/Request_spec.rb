@@ -227,10 +227,10 @@ describe ::Magnets::Request do
 
   it 'can declare an additional basepath for matching viewpath routes (no default basepath)' do
     ::Magnets::Path.new( :name ).instance_eval do
-      basepaths.is_a?( Array ).should == true
+      basepaths.is_a?( ::Array ).should == true
       basepaths.empty?.should == true
       basepath( 'root', :some_path )
-      basepaths[ 0 ].is_a?( Array ).should == true
+      basepaths[ 0 ].is_a?( ::Array ).should == true
       basepaths[ 0 ][ 0 ].is_a?( ::Magnets::Path::PathPart::Constant ).should == true
       basepaths[ 0 ][ 1 ].is_a?( ::Magnets::Path::PathPart::Variable ).should == true
     end
@@ -242,10 +242,10 @@ describe ::Magnets::Request do
 
   it 'can declare an additional path (no default path)' do
     ::Magnets::Path.new( :name ).instance_eval do
-      paths.is_a?( Array ).should == true
+      paths.is_a?( ::Array ).should == true
       paths.empty?.should == true
       path( 'root', :some_path )
-      paths[ 0 ].is_a?( Array ).should == true
+      paths[ 0 ].is_a?( ::Array ).should == true
       paths[ 0 ][ 0 ].is_a?( ::Magnets::Path::PathPart::Constant ).should == true
       paths[ 0 ][ 1 ].is_a?( ::Magnets::Path::PathPart::Variable ).should == true
     end
@@ -257,7 +257,7 @@ describe ::Magnets::Request do
 
   it 'can declare a view to be rendered to the document stack' do
     ::Magnets::Path.new( :name ).instance_eval do
-      render_stack.is_a?( Array ).should == true
+      render_stack.is_a?( ::Array ).should == true
       render_stack.empty?.should == true
       configuration_block = Proc.new do |viewpath, view|
         puts 'viewpath configuration space'

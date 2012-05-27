@@ -61,3 +61,9 @@
 [submodule "view-html"]
 	path = view-html
 	url = ./view-html/
+[submodule "form"]
+	path = form
+	url = ./form/
+[submodule "binding-container"]
+	path = binding-container
+	url = ./binding-container/
